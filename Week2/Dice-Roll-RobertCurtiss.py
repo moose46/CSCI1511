@@ -10,3 +10,6 @@ Description: Roll the dice and sum up the points use
 
 """
 
+import random as rnd
+
+
