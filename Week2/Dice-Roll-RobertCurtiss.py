@@ -12,4 +12,6 @@ Description: Roll the dice and sum up the points use
 
 import random as rnd
 
-
+while True:
+    theRoll = rnd.randint(2, 12)
+    break
