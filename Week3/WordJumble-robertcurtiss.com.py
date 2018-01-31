@@ -21,9 +21,9 @@ jumbledWord = ""
 score = 100
 
 while randomWord:
-    position = rnd.randrange(len(randomWord))
-    jumbledWord += randomWord[position]
-    randomWord = randomWord[:position] + randomWord[(position + 1):]
+	position = rnd.randrange(len(randomWord))
+	jumbledWord += randomWord[position]
+	randomWord = randomWord[:position] + randomWord[(position + 1):]
 
 print("""\tWelcome to the world of jumble!
 \tUnscramble the letter to make a word:\n""")
@@ -32,15 +32,15 @@ print("%s %s" % (savedWord, jumbledWord))
 
 guess = input("Your guess: ")
 while guess != savedWord and guess != "":
-    hint = ""
-    print("Sorry that's not correct!")
-    hint = input("Would you like a hint? (y): ")
-    if hint != "":
-        positionHint = rnd.randrange(len(savedWord))
-        print("Word Letter [%s] is an %s " % (positionHint + 1, savedWord[positionHint]))
-    guess = input("Your guess: ")
-    score -= 1
+	hint = ""
+	print("Sorry that's not correct!")
+	hint = input("Would you like a hint? (y): ")
+	if hint != "":
+		positionHint = rnd.randrange(len(savedWord))
+		print("Word Letter [%s] is an %s " % (positionHint + 1, savedWord[positionHint]))
+	guess = input("Your guess: ")
+	score -= 1
 
 print("You guessed it, congratulations!")
 print("Thanks for playing!")
-# input("Press enter to exit:")
+input("\n\nPress enter to exit:")
