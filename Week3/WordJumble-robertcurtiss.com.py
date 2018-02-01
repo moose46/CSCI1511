@@ -34,7 +34,7 @@ guess = input("Your guess: ")
 while guess != savedWord and guess != "":
 	hint = ""
 	print("Sorry that's not correct!")
-	hint = input("Would you like a hint? (y): ")
+	hint = input("Would you like a hint? [y]: ")
 	if hint != "":
 		positionHint = rnd.randrange(len(savedWord))
 		print("Word Letter [%s] is an %s " % (positionHint + 1, savedWord[positionHint]))

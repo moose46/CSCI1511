@@ -27,18 +27,18 @@ termsDict = {"1,1": "Snake Eyes",
              "5,6": "Six Five no Jive",
              "6,6": "Boxcars"
              }
-dice = [0, 0]
+die = [0, 0]
 rnd.seed()
 while True:
-    dice[0] = rnd.randint(1, 6)
-    dice[1] = rnd.randint(1, 6)
-    dice.sort()
-    theDots = str(dice[0]) + "," + str(dice[1])
+    die[0] = rnd.randint(1, 6)
+    die[1] = rnd.randint(1, 6)
+    die.sort()
+    theDots = str(die[0]) + "," + str(die[1])
 
-    print("The roll: (%d,%d) --- Total Points: (%d)" % (dice[0], dice[1], dice[0] + dice[1]), end="")
+    print("The roll: (%d,%d) --- Total Points: (%d)" % (die[0], die[1], die[0] + die[1]), end="")
 
     if theDots in termsDict:
-        print(" --- (%s)" % termsDict[str(dice[0]) + "," + str(dice[1])])
+        print(" --- (%s)" % termsDict[str(die[0]) + "," + str(die[1])])
 
     ans = input("\nPlay again (y): ")
     if ans == 'y':
