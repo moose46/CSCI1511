@@ -11,30 +11,24 @@ Description:
     using the same format as described in Project 3.
 
 """
+import random as rnd
 
 # init the deck of cards
 suits = ["Hearts", "Clubs", "Diamonds", "Spades"]
-cards = []
-
+cards = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"]
+deck = []
 # create the deck of cards with all four suits
 for suit in suits:
-	cards.append([(1, "1 ", suit),
-				  (2, "2 ", suit),
-				  (3, "3 ", suit),
-				  (4, "4 ", suit),
-				  (5, "5 ", suit),
-				  (6, "6 ", suit),
-				  (7, "7 ", suit),
-				  (8, "8 ", suit),
-				  (9, "9 ", suit),
-				  (10, "10 ", suit),
-				  (10, "J ", suit),
-				  (10, "Q ", suit),
-				  (10, "K ", suit),
-				  (11, "A ", suit)])
+	for card in cards:
+		deck.append((card, suit))
 
-for suit in cards:
-	for card in suit:
-		print(card[1],card[2])
+thePile = list(deck)
 
-print("\nPress enter to continue: ")
+#loop through all cards, and remove them from the pile one at a time
+for card in deck:
+	i = rnd.randint(0, len(thePile) - 1)
+	oneCard = thePile.pop(i)
+
+print(deck)
+# print("{0} of {1}\n".format(oneCard[0], oneCard[1]))
+#print("\nPress enter to continue: ")
