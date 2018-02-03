@@ -11,36 +11,36 @@ Description:
 
 import random as rnd
 
-WORDS = ["KANGAROO","ELEPHANT", "MONGOOSE","RACCOON","OSTRICH","HORSE"]
+WORDS = ["KANGAROO", "ELEPHANT", "MONGOOSE", "RACCOON", "OSTRICH", "HORSE"]
 
 word = rnd.choice(WORDS)
 
-dashes = "_ " * len(word)
-guessedLetters = []
+#init status as a list with dashes
+status = ["_ "] * len(word)
 
+#make guessed letters a list
+guessedLetters = []
+#make word a list
 wordList = list(word)
 print(word)
-print(dashes)
+for i,j in enumerate(status):
+	print(status[i],end="")
 while True:
-	try:
-		letter =  input("\nYour Guess: ").upper()
-		if letter in guessedLetters:
-			print("You already have used that letter, try again:")
-			continue
-		break
-	except:
-		pass
-	finally:
-		dashes = ""
-
-	for i,j in enumerate(wordList):
+	letter = input("\nYour Guess: ").upper()
+	if letter in guessedLetters:
+		print("You already have used that letter, try again:")
+		continue
+	for i, j in enumerate(wordList):
 		if j == letter:
 			guessedLetters.append(letter)
-			dashes += letter + " "
-			#print(l,i)
-		else:
-			dashes += "_ "
-	print(dashes)
-#print(guessedLetters)o
+	for i, j in enumerate(status):
+		if wordList[i] == letter:
+			status[i] = letter + " "
+			continue
+		if letter in guessedLetters and letter == j:
+			status[i] += letter + " "
+	for i, j in enumerate(status):
+		print(status[i], end="")
+# print(guessedLetters)o
 
-#input("\nPress enter to continue: ")
+# input("\nPress enter to continue: ")
