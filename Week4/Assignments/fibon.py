@@ -17,5 +17,9 @@ def fibon(n):
 		a, b = b, a + b
 
 
-for x in fibon(1000):
-	print(x)
+# for x in fibon(1000):
+# 	print(x)
+
+if __name__  == "__main__":
+	print("You ran this module directly and did not import it")
+	input("\nPress enter to continue: ")
