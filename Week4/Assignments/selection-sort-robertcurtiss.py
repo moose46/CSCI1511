@@ -30,3 +30,5 @@ while len(unOrderd) > 0:
 	ordered.append(lowest)
 
 print(ordered)
+
+input("\nPress enter to continue: ")
