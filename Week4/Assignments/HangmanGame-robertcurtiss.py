@@ -11,14 +11,7 @@ Description:
 
 import random as rnd
 import HangmanGlyphs as glyphs
-#from .fibon import *#
-#from Week4 import fibon
-#from . import myPackage
-#from . import fibon
-#print(fibon(3))
 
-# for i in fibon.fibon(5):
-# 	print(i)
 
 
 WORDS = ["KANGAROO", "ELEPHANT", "MONGOOSE", "RACCOON", "OSTRICH", "HORSE"]
@@ -33,14 +26,14 @@ max_tries = 8
 guessedLetters = []
 # make word a list
 wordList = list(word)
-print(word)
+#print(word)
 print(status)
 
 noMatch = True
 while noMatch:
 	foundLetters = 0
 	status = ""
-	print(inCorrectGuesses)
+	#print(inCorrectGuesses)
 	print(glyphs.man[inCorrectGuesses])
 	numberOfGuesses += 1
 	if inCorrectGuesses == len(glyphs.man) - 1:
