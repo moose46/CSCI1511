@@ -20,7 +20,7 @@ rnd.shuffle(unOrderd)
 print(unOrderd)
 
 
-
+print("Sorts unordered list of integers\n\n")
 while len(unOrderd) > 0:
 	lowest = unOrderd[0]
 	for num in unOrderd:
