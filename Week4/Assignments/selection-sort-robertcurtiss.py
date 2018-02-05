@@ -20,10 +20,11 @@ rnd.shuffle(unOrderd)
 print(unOrderd)
 
 
+
 while len(unOrderd) > 0:
-	lowest = 10
+	lowest = unOrderd[0]
 	for num in unOrderd:
-		if num < lowest:
+		if num <= lowest:
 			lowest = num
 	unOrderd.remove(lowest)
 	ordered.append(lowest)
