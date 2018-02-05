@@ -11,7 +11,7 @@ Description: Selection sort on an unordered list
 
 import  random as rnd
 
-unOrderd = list(range(10))
+unOrderd = list(range(20))
 
 ordered = []
 
