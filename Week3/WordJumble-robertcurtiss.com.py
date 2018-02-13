@@ -28,7 +28,7 @@ while randomWord:
 print("""\tWelcome to the world of jumble!
 \tUnscramble the letter to make a word:\n""")
 
-print("%s %s" % (savedWord, jumbledWord))
+print("Jumbled word is: ", jumbledWord)
 
 guess = input("Your guess: ")
 while guess != savedWord and guess != "":
