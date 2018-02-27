@@ -37,7 +37,7 @@ def show_menu():
         try:
             display_menu()
             ans = int(input("Enter your selection [1-4]: "))
-            if ans in range(1, 6):
+            if ans in range(1, 7):
                 return ans
             raise ValueError()
         except Exception as Ex:
@@ -73,7 +73,7 @@ def create_default_data():
 def get_new_entry(in_person):
     """collects and assigns data to a new person and return the person"""
     person = Person()
-    person.name = get_name(person)
+    person.name = get_name()
     person.phone = input("Enter Phone Number: ")
     return person
 
@@ -179,7 +179,8 @@ def main():
         # Show all entries in the database
         # add new entry
         if action == 1:
-            person = get_new_entry()
+            person = Person()
+            person = get_new_entry(person)
             db_add_entry(person)
         elif action == 2:
             # update an entry
