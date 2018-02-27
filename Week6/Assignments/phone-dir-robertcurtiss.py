@@ -75,6 +75,7 @@ def db_add_entry(person):
     if person.name in db:
         print("Updating entry ..... {name}\n".format(name=person.name))
 
+
     db[person.name.capitalize()] = person.phone
     db.sync()
     db.close()
