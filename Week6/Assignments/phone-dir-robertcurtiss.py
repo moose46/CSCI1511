@@ -80,7 +80,6 @@ def db_add_entry(person):
     db.close()
     db_show_all()
 
-
 def find_entry(key):
     """Find a entry by phone number or name"""
     found_list = []
