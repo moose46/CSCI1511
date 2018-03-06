@@ -1,0 +1,5 @@
+1. Complex data, such as a dictionary
+2. No, you need to use the sync() function to flush the file to the disk
+3. When you are expecting something to exist, or a string input to convert to a number, etc...
+4. When an error occurs, you can trap each error, and have the program react accordingly.
+5. Text, or ascii
