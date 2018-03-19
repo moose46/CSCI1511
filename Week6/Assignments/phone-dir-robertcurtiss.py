@@ -117,17 +117,17 @@ def db_update_entry():
     db_show_all()
 
 
-def find_entry(key):
+def find_entry(search_key):
     """Find a entry by phone number or name"""
     found_list = []
     db = sh.open(the_phone_book_name, flag='c', writeback=True)
-    for k in db:
-        name = str(k).lower()
-        phone = str(db[k])
-        if (name.find(key.lower())) >= 0 or (phone.find(key.lower()) >= 0):
+    for key in db:
+        name = str(key).lower()
+        phone = str(db[key])
+        if (name.find(search_key.lower())) >= 0 or (phone.find(search_key.lower()) >= 0):
             person = Person()
-            person.name = k
-            person.phone = db[k]
+            person.name = key
+            person.phone = db[key]
             found_list.append(person)
     display_list(found_list)
     db.close()

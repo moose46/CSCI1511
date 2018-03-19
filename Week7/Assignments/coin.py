@@ -17,6 +17,9 @@ class Coin(object):
     __sideup = None
     __amount = 20
 
+    def __init__(self):
+        pass
+
     def __str__(self):
         self.toss()
 
