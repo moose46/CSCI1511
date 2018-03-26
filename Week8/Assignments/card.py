@@ -32,9 +32,6 @@ class Card(object):
             rep = 'XX'
         return rep
 
-    def flip(self):
-        self.is_face_up = not self.is_face_up
-
 
 class Unprintable_Card(Card):
     def __str__(self):
