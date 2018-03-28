@@ -23,48 +23,54 @@ class Application(Frame):
 
     def __init__(self, master):
         super(Application, self).__init__(master)
-        self.grid(sticky=N + E + S + W, padx=15, pady=15)
+        self.grid(sticky=N + E + S + W, padx=55, pady=55)
         self.create_widgets()
         self.root = master
 
     def create_widgets(self):
-        Label(self,
-              text='Enter Information for a new story').grid(row=0,
-                                                             column=0,
-                                                             columnspan=2,
-                                                             sticky=W)
-        Label(self,
-              text='Person:', width=10, anchor=E, justify=RIGHT).grid(row=1, column=0, sticky=W)
-        self.person_ent = Entry(self, textvariable=StringVar(self,value='Bobby'))
+        self.services_frame = LabelFrame(text=" Mid Libs ",
+                                         padx=10,
+                                         pady=10,
+                                         relief=RIDGE, font='Bold')
+        self.services_frame.grid(row=0, column=0, padx=20, pady=20, sticky=W)
+        Label(self.services_frame,
+              text='Enter Information for a new story', font='Bold', padx=12).grid(row=0,
+                                                                          column=0,
+                                                                          columnspan=2,
+                                                                          sticky=W)
+        Label(self.services_frame,
+              text='Person:', width=10, anchor=E, justify=RIGHT, font='Bold', padx=12).grid(row=1, column=0, sticky=W)
+        self.person_ent = Entry(self.services_frame, textvariable=StringVar(self, value='Bobby'), font='Bold')
         self.person_ent.grid(row=1, column=1, sticky=W)
 
-        Label(self,
-              text='Plural Noun:', width=10, anchor=E).grid(row=2, column=0, sticky=W)
-        self.noun_ent = Entry(self, textvariable=StringVar(self,value='Cats'))
+        Label(self.services_frame,
+              text='Plural Noun:', width=10, anchor=E, font='Bold', padx=12).grid(row=2, column=0, sticky=W)
+        self.noun_ent = Entry(self.services_frame, textvariable=StringVar(self, value='Cats'), font='Bold')
         self.noun_ent.grid(row=2, column=1, sticky=W)
-        Label(self,
-              text='Verb:', width=10, anchor=E).grid(row=3, column=0, sticky=W)
-        self.verb_ent = Entry(self)
+
+        Label(self.services_frame,
+              text='Verb:', width=10, anchor=E, font='Bold', padx=12).grid(row=3, column=0, sticky=W)
+        self.verb_ent = Entry(self.services_frame, font='Bold')
         self.verb_ent.grid(row=3, column=1, sticky=W)
 
-        Label(self,
-              text='Adjectives(s):', width=10, anchor=E).grid(row=4, column=0, sticky=W)
+        Label(self.services_frame,
+              text='Adjectives(s):', width=10, anchor=E, font='Bold', padx=12).grid(row=4, column=0, sticky=W)
 
         self.is_itchy = BooleanVar()
-        Checkbutton(self,
+        Checkbutton(self.services_frame,
                     text='itchy',
-                    variable=self.is_itchy).grid(row=4, column=1, sticky=W)
+                    variable=self.is_itchy, font='Bold').grid(row=4, column=1, sticky=W)
         self.is_joyous = BooleanVar()
-        Checkbutton(self,
+        Checkbutton(self.services_frame,
                     text='joyous',
-                    variable=self.is_joyous).grid(row=4, column=2, sticky=W)
+                    variable=self.is_joyous, font='Bold').grid(row=4, column=2, sticky=W)
         self.is_electric = BooleanVar()
-        Checkbutton(self,
+        Checkbutton(self.services_frame,
                     text='electric',
-                    variable=self.is_electric).grid(row=4, column=3, sticky=W)
+                    variable=self.is_electric, font='Bold').grid(row=4, column=3, sticky=W)
         # create label for body parts radio buttons
-        Label(self,
-              text='Body Part:', width=10, anchor=E).grid(row=5, column=0, sticky=W)
+        Label(self.services_frame,
+              text='Body Part:', width=10, anchor=E, font='Bold', padx=12).grid(row=5, column=0, sticky=W)
         # create variable for single body part
         self.body_part = StringVar()
         self.body_part.set(None)
@@ -73,18 +79,20 @@ class Application(Frame):
         body_parts = ['bellybutton', 'big toe', 'medulla obliongata']
         column = 1
         for part in body_parts:
-            Radiobutton(self,
+            Radiobutton(self.services_frame,
                         text=part,
                         variable=self.body_part,
-                        value=part).grid(
+                        value=part, font='Bold').grid(
                 row=5, column=column, stick=W)
             column += 1
         # create submit button
-        Button(self,
-               text='Click for story',
+        Button(self.services_frame,
+               text='Click for story', font='Bold',
                command=self.tell_story).grid(row=6, column=0, sticky=W)
 
-        self.story_txt = Text(self, width=75, height=10, wrap=WORD)
+        self.story_txt = Text(self.services_frame, width=75, height=10, wrap=WORD,
+                              font=('Tempus Sans ITC', 16, 'bold'),
+                              fg='Red', bg='Black', padx=20, pady=20 )
         self.story_txt.grid(row=7, column=0, columnspan=4)
 
     def tell_story(self):
@@ -124,7 +132,6 @@ class Application(Frame):
         story += 'The moral of the story? Be careful what you '
         story += verb
         story += " for."
-
 
         self.story_txt.delete(0.0, END)
         self.story_txt.insert(0.0, story)

@@ -16,6 +16,7 @@ Class: CSCI-1511
 from tkinter import *
 from tkinter import messagebox
 
+
 class Repair(object):
     def __init__(self, name, cost):
         self.name = name
@@ -65,8 +66,11 @@ class Application(Frame):
         self.invoice_txt = Text(self.services_frame, width=40, wrap=WORD, font='Bold', bg='Light Yellow')
         self.invoice_txt.grid(row=0, column=2, rowspan=len(self.repairs), sticky=W)
         Button(self.services_frame,
-               text='Exit...', font='Bold', command=self.button_exit).grid(row=len(self.repairs) + 1, column=2,
-                                                                             padx=10, pady=10, sticky=E)
+               text='Say goodbye to Joe, and Exit...',
+               font='Bold',
+               command=self.button_exit).grid(row=len(self.repairs) + 1,
+                                              column=0, columnspan=3,
+                                              padx=10, pady=10)
         self.update_total()
 
     def button_exit(self):
