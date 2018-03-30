@@ -27,7 +27,7 @@ deck1.populate()
 
 deck1.shuffle()
 
-print(deck1)
+# print(deck1)
 
 def main():
     #pp.282

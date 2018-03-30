@@ -35,22 +35,25 @@ class Application(Frame):
         self.services_frame.grid(row=0, column=0, padx=20, pady=20, sticky=W)
         Label(self.services_frame,
               text='Enter Information for a new story', font='Bold', padx=12).grid(row=0,
-                                                                          column=0,
-                                                                          columnspan=2,
-                                                                          sticky=W)
+                                                                                   column=0,
+                                                                                   columnspan=2,
+                                                                                   sticky=W)
         Label(self.services_frame,
               text='Person:', width=10, anchor=E, justify=RIGHT, font='Bold', padx=12).grid(row=1, column=0, sticky=W)
-        self.person_ent = Entry(self.services_frame, textvariable=StringVar(self, value='Bobby'), font='Bold')
+        self.person_ent = Entry(self.services_frame,
+                                textvariable=StringVar(self, value='Bobby'), font='Bold')
         self.person_ent.grid(row=1, column=1, sticky=W)
 
         Label(self.services_frame,
               text='Plural Noun:', width=10, anchor=E, font='Bold', padx=12).grid(row=2, column=0, sticky=W)
-        self.noun_ent = Entry(self.services_frame, textvariable=StringVar(self, value='Cats'), font='Bold')
+        self.noun_ent = Entry(self.services_frame,
+                              textvariable=StringVar(self, value='Cats'), font='Bold')
         self.noun_ent.grid(row=2, column=1, sticky=W)
 
         Label(self.services_frame,
               text='Verb:', width=10, anchor=E, font='Bold', padx=12).grid(row=3, column=0, sticky=W)
-        self.verb_ent = Entry(self.services_frame, font='Bold')
+        self.verb_ent = Entry(self.services_frame, font='Bold',
+                              textvariable=StringVar(self, value='Wish'))
         self.verb_ent.grid(row=3, column=1, sticky=W)
 
         Label(self.services_frame,
@@ -90,9 +93,9 @@ class Application(Frame):
                text='Click for story', font='Bold',
                command=self.tell_story).grid(row=6, column=0, sticky=W)
 
-        self.story_txt = Text(self.services_frame, width=75, height=10, wrap=WORD,
-                              font=('Tempus Sans ITC', 16, 'bold'),
-                              fg='Red', bg='Black', padx=20, pady=20 )
+        self.story_txt = Text(self.services_frame, wrap=WORD,
+                              font=('Tempus Sans ITC', 14, 'bold'),
+                              fg='Red', bg='Black', padx=20, pady=20)
         self.story_txt.grid(row=7, column=0, columnspan=4)
 
     def tell_story(self):
