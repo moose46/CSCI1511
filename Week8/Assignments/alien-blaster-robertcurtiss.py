@@ -19,7 +19,7 @@ Class: CSCI-1511
 
 
 class LifeForm(object):
-    die_message = ''
+    die_message = str
     blast_message = '... {} blasts ...{}! POW!!! - {}\n'
 
     def __init__(self, name):
